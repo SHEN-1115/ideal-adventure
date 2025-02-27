@@ -38,7 +38,7 @@ filtered_df = filtered_df.sort_values(by="Disease").reset_index(drop=True)
 # ✅ 預測功能
 @st.cache_resource  # Streamlit 快取，避免重複載入
 def load_model():
-    model = keras.models.load_model("disease_model.h5")  # 載入已訓練好的模型
+    model = tf.keras.models.load_model("disease_model.h5")  # 載入已訓練好的模型
     return model
 
 model = load_model()
