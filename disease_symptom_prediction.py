@@ -16,7 +16,7 @@ Original file is located at
 """
 
 import pandas as pd
-file_path = "C:\Users\USER\Downloads\goog4_request&X-Goog-Date=20250227T061741Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=23e00e5fe81574c1a5101d56cb7a05cf642f347ee47beb962334ff430f26e1b50c36a2c23ba7c8bbd5ef56bc6537ed0bd0726e5b69a.csv"
+file_path = r"C:\Users\USER\Downloads\0227.csv"
 df = pd.read_csv(file_path)
 df.describe()
 
