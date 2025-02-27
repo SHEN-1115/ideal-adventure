@@ -14,7 +14,7 @@ Original file is located at
 """## 下載資料集
 
 """
-
+python --version
 import pandas as pd
 file_path = "https://raw.githubusercontent.com/SHEN-1115/ideal-adventure/main/disease.csv"
 df = pd.read_csv(file_path)
