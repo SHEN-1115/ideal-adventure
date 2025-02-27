@@ -14,22 +14,6 @@ Original file is located at
 """## 下載資料集
 
 """
-import pandas as pd
-import requests
-from io import StringIO
-
-# 下載 CSV 檔案
-url = "https://raw.githubusercontent.com/SHEN-1115/ideal-adventure/main/diseases.csv"
-response = requests.get(url)
-if response.status_code == 200:
-    # 將 CSV 內容讀入 pandas DataFrame
-    data = StringIO(response.text)
-    df = pd.read_csv(data)
-    print(df.head())
-else:
-    print("Error downloading the file.")
-
-
 
 import pandas as pd
 file_path = "https://raw.githubusercontent.com/SHEN-1115/ideal-adventure/main/disease.csv"
