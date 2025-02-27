@@ -25,7 +25,7 @@ df.describe()
 from sklearn import tree
 import numpy as np
 import pandas as pd
-df = pd.read_csv("diseases.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/SHEN-1115/ideal-adventure/main/disease.csv")
 print(df.shape)
 df
 
