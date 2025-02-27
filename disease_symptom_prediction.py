@@ -115,7 +115,7 @@ print("Y_train shape:", Y_train.shape)
 print("Y_test shape:", Y_test.shape)
 
 # 建立神經網路模型
-model = keras.Sequential([
+model = tf.keras.Sequential([
     tf.keras.layers.Dense(128, activation='relu', input_shape=(X_train.shape[1],)),  # 第一層
     tf.keras.layers.Dense(64, activation='relu'),  # 隱藏層
     tf.keras.layers.Dense(Y_train.shape[1], activation='softmax')  # 輸出層 (One-Hot 編碼的欄位數)
