@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import tensorflow as tf
-from tensorflow import keras
 from sklearn.model_selection import train_test_split
 
 # 讀取 CSV
@@ -54,3 +53,4 @@ if st.button("預測"):
         st.success(f"可能的疾病為：{disease}")
     else:
         st.warning("請選擇至少一個症狀！")
+
