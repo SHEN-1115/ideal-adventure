@@ -14,7 +14,6 @@ Original file is located at
 """## 下載資料集
 
 """
-python --version
 import pandas as pd
 file_path = "https://raw.githubusercontent.com/SHEN-1115/ideal-adventure/main/disease.csv"
 df = pd.read_csv(file_path)
@@ -117,9 +116,9 @@ print("Y_test shape:", Y_test.shape)
 
 # 建立神經網路模型
 model = keras.Sequential([
-    keras.layers.Dense(128, activation='relu', input_shape=(X_train.shape[1],)),  # 第一層
-    keras.layers.Dense(64, activation='relu'),  # 隱藏層
-    keras.layers.Dense(Y_train.shape[1], activation='softmax')  # 輸出層 (One-Hot 編碼的欄位數)
+    tf.keras.layers.Dense(128, activation='relu', input_shape=(X_train.shape[1],)),  # 第一層
+    tf.keras.layers.Dense(64, activation='relu'),  # 隱藏層
+    tf.keras.layers.Dense(Y_train.shape[1], activation='softmax')  # 輸出層 (One-Hot 編碼的欄位數)
 ])
 
 # 編譯模型
