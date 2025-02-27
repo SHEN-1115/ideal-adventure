@@ -24,7 +24,7 @@ df.describe()
 
 from sklearn import tree
 import numpy as np
-import pandas as pd
+pip install tensorflow
 from tensorflow import keras
 df = pd.read_csv("https://raw.githubusercontent.com/SHEN-1115/ideal-adventure/main/disease.csv")
 print(df.shape)
