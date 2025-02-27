@@ -1,3 +1,4 @@
+streamlit run <disease_symptom_prediction.py>
 import streamlit as st
 import pandas as pd
 import numpy as np
