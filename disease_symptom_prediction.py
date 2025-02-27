@@ -16,7 +16,7 @@ Original file is located at
 """
 
 import pandas as pd
-file_path = "https://raw.githubusercontent.com/SHEN-1115/ideal-adventure/refs/heads/main/disease.csv"
+file_path = "https://raw.githubusercontent.com/SHEN-1115/ideal-adventure/main/disease.csv"
 df = pd.read_csv(file_path)
 df.describe()
 
