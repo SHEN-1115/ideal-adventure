@@ -16,7 +16,7 @@ Original file is located at
 """
 
 import pandas as pd
-file_path = "https://storage.googleapis.com/kagglesdsdata/datasets/672162/1182853/dataset.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20250219%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250219T063901Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=99f286acfdd50d1ae2f4ff5e08f9f6d1bb94cd111b1ef5595265a701cc9b2e1e30d6b85edda48d54f7f9e319ffd9cc99b7a57e0b89cc80c3b607998207a82aba756fef0ebc2f263bca2883f1b5e09e5e2c983106df144c28f55037ca3a725945e5462a9652f269c0593ca89707ed17e73ee2801917d8d51226f274f7b06f975f17e4dc0fca80de2d12c5f29b1df18020103ec26c2c6d8e4fbe66ce1471a47640294a96d820e95a321a417795144944c930c3002c0355237364b69a9b7bda893bb6a029a97e760de7b96074e776299d12e311ec7085f2b999fdd60cafef435ea7adbb9720296d0be3d5e13f1b09e1ff0b09d523616cf74d86ed1268470561bbd5"
+file_path = "C:\Users\USER\Downloads\disease_symptom_prediction.py"
 df = pd.read_csv(file_path)
 df.describe()
 
