@@ -16,7 +16,7 @@ Original file is located at
 """
 
 import pandas as pd
-file_path = r"C:\Users\USER\Downloads\0227.csv"
+file_path = "C:\Users\USER\Downloads\0227.csv"
 df = pd.read_csv(file_path)
 df.describe()
 
