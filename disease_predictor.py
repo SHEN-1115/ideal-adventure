@@ -60,6 +60,9 @@ if st.button("預測"):
         # 建立 one-hot 輸入向量
         input_vector = np.array([[symptom in selected_symptoms for symptom in filtered_df.columns[1:]]])
         
+        # 將布林值轉換為浮點數 (0 和 1)，並確保類型為 float32
+        input_vector = input_vector.astype(np.float32)
+
         # 顯示輸入向量的形狀
         st.write(f"Input vector shape: {input_vector.shape}")
         st.write(f"Input vector: {input_vector}")
