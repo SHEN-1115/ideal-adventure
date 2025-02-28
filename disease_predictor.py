@@ -41,6 +41,7 @@ filtered_df = filtered_df.sort_values(by="Disease").reset_index(drop=True)
 # Streamlit 頁面
 st.title("疾病診斷模型")
 
+st.cache_resource.clear()  # 清除緩存
 # 使用 @st.cache_resource 裝飾器來緩存模型加載
 @st.cache_resource
 def load_model():
