@@ -61,6 +61,10 @@ if st.button("預測"):
         input_vector = np.array([[symptom in selected_symptoms for symptom in filtered_df.columns[1:]]])
         prediction = model.predict(input_vector)
         disease = selected_diseases[np.argmax(prediction)]
+        ##################################
+        print(input_vector.shape)
+        print(input_vector)
+        ###################################
         st.success(f"可能的疾病為：{disease}")
 
         # 顯示 input_vector 和其形狀
