@@ -60,3 +60,8 @@ if st.button("預測"):
         st.success(f"可能的疾病為：{disease}")
     else:
         st.warning("請選擇至少一個症狀！")
+
+################################################################################################################
+
+st.write(f"Input vector: {input_vector}")
+st.write(f"Input vector shape: {input_vector.shape}")
