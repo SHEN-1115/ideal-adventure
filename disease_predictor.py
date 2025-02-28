@@ -36,7 +36,7 @@ selected_diseases = [
 filtered_df = symptom_table[symptom_table["Disease"].isin(selected_diseases)]
 filtered_df = filtered_df.sort_values(by="Disease").reset_index(drop=True)
 
-####################################################################################
+################################################################################################
 
 # Streamlit 頁面
 st.title("疾病診斷模型")
@@ -65,8 +65,8 @@ if st.button("預測"):
         input_vector = input_vector.astype(np.float32)
         
         # 顯示 input_vector 和其形狀
-        st.write(f"Input vector shape: {input_vector.shape}")
-        st.write(f"Input vector: {input_vector}")
+        #st.write(f"Input vector shape: {input_vector.shape}")
+        #st.write(f"Input vector: {input_vector}")
         
         # 預測
         prediction = model.predict(input_vector)
