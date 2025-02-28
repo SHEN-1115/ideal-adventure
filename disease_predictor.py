@@ -62,8 +62,8 @@ if st.button("預測"):
         prediction = model.predict(input_vector)
         disease = selected_diseases[np.argmax(prediction)]
         ##################################
-        print(input_vector.shape)
-        print(input_vector)
+        st.write(f"Input vector shape: {input_vector.shape}")
+        st.write(f"Input vector: {input_vector}")
         ###################################
         st.success(f"可能的疾病為：{disease}")
 
