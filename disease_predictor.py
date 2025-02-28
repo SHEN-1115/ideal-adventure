@@ -64,8 +64,8 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 model.fit(X_train, Y_train, epochs=50, batch_size=16, validation_data=(X_test, Y_test))
 
 # 儲存模型
-model.save("disease_model.h5")  # 存成 .h5 檔案
-print("模型已存成 disease_model.h5")
+model.save("disease_model.keras")  # 存成 .h5 檔案
+print("模型已存成 disease_model.keras")
 
 # Streamlit 頁面
 st.title("疾病診斷模型")
