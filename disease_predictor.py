@@ -51,6 +51,10 @@ model = load_model()
 
 # 建立一個症狀選擇框
 selected_symptoms = st.multiselect("選擇症狀", list(filtered_df.columns[1:]))
+
+# 定義 input_vector 預設值為 None
+input_vector = None
+
 if st.button("預測"):
     if selected_symptoms:
         # 建立 one-hot 輸入向量
@@ -58,10 +62,9 @@ if st.button("預測"):
         prediction = model.predict(input_vector)
         disease = selected_diseases[np.argmax(prediction)]
         st.success(f"可能的疾病為：{disease}")
+
+        # 顯示 input_vector 和其形狀
+        st.write(f"Input vector: {input_vector}")
+        st.write(f"Input vector shape: {input_vector.shape}")
     else:
         st.warning("請選擇至少一個症狀！")
-
-################################################################################################################
-
-st.write(f"Input vector: {input_vector}")
-st.write(f"Input vector shape: {input_vector.shape}")
