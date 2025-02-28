@@ -49,10 +49,6 @@ def load_model():
 # 載入模型
 model = load_model()
 
-# 載入模型後，檢查模型結構
-st.write("Model Summary:")
-st.write(model.summary())
-
 # 建立一個症狀選擇框
 selected_symptoms = st.multiselect("選擇症狀", list(filtered_df.columns[1:]))
 
@@ -64,20 +60,17 @@ if st.button("預測"):
         # 建立 one-hot 輸入向量
         input_vector = np.array([[symptom in selected_symptoms for symptom in filtered_df.columns[1:]]])
 
-        # 將布林值轉換為浮點數 (0 和 1)，並確保類型為 float32
+        # 確保數據類型為 float32
         input_vector = input_vector.astype(np.float32)
-
-        # 顯示輸入向量的形狀
+        
+        # 顯示 input_vector 和其形狀
         st.write(f"Input vector shape: {input_vector.shape}")
         st.write(f"Input vector: {input_vector}")
-
-        # 預測並顯示結果
-        try:
-            prediction = model.predict(input_vector)
-            disease = selected_diseases[np.argmax(prediction)]
-            st.success(f"可能的疾病為：{disease}")
-        except Exception as e:
-            st.error(f"預測錯誤: {str(e)}")
+        
+        # 預測
+        prediction = model.predict(input_vector)
+        disease = selected_diseases[np.argmax(prediction)]
+        
+        st.success(f"可能的疾病為：{disease}")
     else:
         st.warning("請選擇至少一個症狀！")
-
