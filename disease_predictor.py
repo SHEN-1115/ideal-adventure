@@ -67,6 +67,11 @@ if st.button("預測"):
         # 顯示 input_vector 和其形狀
         #st.write(f"Input vector shape: {input_vector.shape}")
         #st.write(f"Input vector: {input_vector}")
+        st.write(f"Model expects input shape: {model.input_shape}")
+        st.write(f"Current input vector shape: {input_vector.shape}")
+        st.write("Example X_train row:", X_train[0])
+        st.write("Current input vector:", input_vector)
+
         
         # 預測
         prediction = model.predict(input_vector)
