@@ -72,9 +72,8 @@ if st.button("預測"):
         expected_input_shape = model.input_shape[1]  # 模型期待的特徵數
         st.write(f"Model expects input shape: {expected_input_shape}")
         st.write(f"Current input vector shape: {input_vector.shape[1]}")
-
-if input_vector.shape[1] != expected_input_shape:
-    st.write("⚠️ Warning: Input vector length does not match the model's expected input shape!")
+        if input_vector.shape[1] != expected_input_shape:
+            st.write("⚠️ Warning: Input vector length does not match the model's expected input shape!")
         
         # 預測
         prediction = model.predict(input_vector)
