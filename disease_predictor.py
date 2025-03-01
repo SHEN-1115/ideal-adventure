@@ -74,9 +74,9 @@ if st.button("預測"):
         #st.write(blackheads_samples)
         #st.write("Corresponding labels:", y_train.loc[blackheads_samples.index])
 
-        #prediction = model.predict(input_vector)
-        #predicted_disease = selected_diseases[np.argmax(prediction)]
-        #st.success(f"可能的疾病為：{predicted_disease}")
+        prediction = model.predict(input_vector)
+        predicted_disease = selected_diseases[np.argmax(prediction)]
+        st.success(f"可能的疾病為：{predicted_disease}")
 
         ############################
         #sorted_indices = np.argsort(prediction[0])[::-1]  # 由高到低排序
