@@ -58,27 +58,18 @@ input_vector = None
 
 if st.button("預測"):
     if selected_symptoms:
-        # 建立 one-hot 輸入向量
-        input_vector = np.array([[symptom in selected_symptoms for symptom in filtered_df.columns[1:]]])
+        symptom_order = list(filtered_df.columns[1:])
+        input_vector = np.array([[symptom in selected_symptoms for symptom in symptom_order]]).astype(np.float32)
 
-        # 確保數據類型為 float32
-        input_vector = input_vector.astype(np.float32)
-        
-        # 顯示 input_vector 和其形狀
-        #st.write(f"Input vector shape: {input_vector.shape}")
-        #st.write(f"Input vector: {input_vector}")
+        # 顯示輸入資訊
         st.write(f"Model expects input shape: {model.input_shape}")
         st.write(f"Current input vector shape: {input_vector.shape}")
-        expected_input_shape = model.input_shape[1]  # 模型期待的特徵數
-        st.write(f"Model expects input shape: {expected_input_shape}")
-        st.write(f"Current input vector shape: {input_vector.shape[1]}")
-        if input_vector.shape[1] != expected_input_shape:
-            st.write("⚠️ Warning: Input vector length does not match the model's expected input shape!")
-        
-        # 預測
+        st.write("Example X_train row:", X_train.iloc[0].values)
+        st.write("Current input vector:", input_vector)
+
         prediction = model.predict(input_vector)
-        disease = selected_diseases[np.argmax(prediction)]
-        
-        st.success(f"可能的疾病為：{disease}")
+        predicted_disease = Y.columns[np.argmax(prediction)]
+
+        st.success(f"可能的疾病為：{predicted_disease}")
     else:
         st.warning("請選擇至少一個症狀！")
