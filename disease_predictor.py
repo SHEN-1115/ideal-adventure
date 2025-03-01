@@ -61,15 +61,14 @@ if st.button("預測"):
         symptom_order = list(filtered_df.columns[1:])
         input_vector = np.array([[symptom in selected_symptoms for symptom in symptom_order]]).astype(np.float32)
 
-        # 顯示輸入資訊
+        # 顯示模型期望的輸入形狀和目前輸入的形狀
         st.write(f"Model expects input shape: {model.input_shape}")
         st.write(f"Current input vector shape: {input_vector.shape}")
-        st.write("Example X_train row:", X_train.iloc[0].values)
         st.write("Current input vector:", input_vector)
 
         prediction = model.predict(input_vector)
-        predicted_disease = Y.columns[np.argmax(prediction)]
-
+        predicted_disease = selected_diseases[np.argmax(prediction)]
         st.success(f"可能的疾病為：{predicted_disease}")
     else:
         st.warning("請選擇至少一個症狀！")
+
