@@ -62,27 +62,27 @@ if st.button("預測"):
         input_vector = np.array([[symptom in selected_symptoms for symptom in symptom_order]]).astype(np.float32)
 
         # 各種神奇的確認步驟
-        st.write(model.summary())
-        prediction = model.predict(input_vector)
-        st.write("Prediction Output:", prediction)
-        predicted_index = np.argmax(prediction)
-        st.write(f"Predicted Index: {predicted_index}")
-        st.write(f"Predicted Disease: {selected_diseases[predicted_index]}")
+        #st.write(model.summary())
+        #prediction = model.predict(input_vector)
+        #st.write("Prediction Output:", prediction)
+        #predicted_index = np.argmax(prediction)
+        #st.write(f"Predicted Index: {predicted_index}")
+        #st.write(f"Predicted Disease: {selected_diseases[predicted_index]}")
         #
-        st.write("Selected Diseases List:", selected_diseases)
-        blackheads_samples = X_train[X_train['blackheads'] == 1]
-        st.write(blackheads_samples)
-        st.write("Corresponding labels:", y_train.loc[blackheads_samples.index])
+        #st.write("Selected Diseases List:", selected_diseases)
+        #blackheads_samples = X_train[X_train['blackheads'] == 1]
+        #st.write(blackheads_samples)
+        #st.write("Corresponding labels:", y_train.loc[blackheads_samples.index])
 
-        prediction = model.predict(input_vector)
-        predicted_disease = selected_diseases[np.argmax(prediction)]
-        st.success(f"可能的疾病為：{predicted_disease}")
+        #prediction = model.predict(input_vector)
+        #predicted_disease = selected_diseases[np.argmax(prediction)]
+        #st.success(f"可能的疾病為：{predicted_disease}")
 
         ############################
-        sorted_indices = np.argsort(prediction[0])[::-1]  # 由高到低排序
-        st.write("Top Predictions:")
-        for idx in sorted_indices[:5]:  # 顯示前 5 個
-            st.write(f"{selected_diseases[idx]}: {prediction[0][idx]:.4f}")
+        #sorted_indices = np.argsort(prediction[0])[::-1]  # 由高到低排序
+        #st.write("Top Predictions:")
+        #for idx in sorted_indices[:5]:  # 顯示前 5 個
+            #st.write(f"{selected_diseases[idx]}: {prediction[0][idx]:.4f}")
     else:
         st.warning("請選擇至少一個症狀！")
 
