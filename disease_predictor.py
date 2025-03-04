@@ -45,7 +45,7 @@ st.cache_resource.clear()  # 清除緩存
 # 使用 @st.cache_resource 裝飾器來緩存模型加載
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("disease_model.keras")
+    return tf.keras.models.load_model("disease_model-2.keras")
 
 # 載入模型
 model = load_model()
